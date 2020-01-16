@@ -24,14 +24,22 @@ def welcome():
 
 # Create
 def create():
-  # if welcome == "c":
-    new_note = Notes(title = "New note", date =date(2019, 1, 16), body = "this is my new notes" )
-    new_note.save()
-    print(f"Success! Your new note titled {new_note.title} was created!")
-  # elif welcome():
+  print("Please enter your new note: ")
+  new_title = input("Enter Title: ")
+  new_date = input("Please enter date - year,month,date: ")
+  new_body = input("Please enter your note: ") 
+    
+  new_note = Notes(title = new_title, date = new_date, body= new_body)
+  new_note.save()
+  print(f"Success! Your new note titled {new_note.title} was created!")
+  success = input("Would you like to add another note? [y/n]")
+  if success == "y":
+    create()
+  elif success == "n":
+    return
+    
 welcome()
 
-
-
 # Read 
+
 # if welcome == "s"
