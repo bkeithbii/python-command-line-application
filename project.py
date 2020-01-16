@@ -19,8 +19,8 @@ def welcome():
   welcome = input("To create a new note please press [c]. To Search for an existing note press [s]. To update a note press [u]. To delete an existing note press [d].")
   if welcome == "c":
     create()
-  # elif welcome == "s":
-  #   search()
+  elif welcome == "s":
+    search()
 
 # Create
 def create():
@@ -37,9 +37,14 @@ def create():
     create()
   elif success == "n":
     return
+
+# Read
+def search():
+  input_title = input("Please enter the title note you are searching for: ")
+  search_note = Notes.select().where(Notes.title == input_title)
+  for note in search_note:
+    print(note.title)
+    print(note.date)
+    print(note.body)
     
 welcome()
-
-# Read 
-
-# if welcome == "s"
