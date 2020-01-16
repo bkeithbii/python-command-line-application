@@ -16,16 +16,22 @@ class Notes(BaseModel):
 db.connect()
  
 def welcome():
-  welcome = input("To create a new note please press c. To Search for an existing note press s. To update a note press u. To delete an existing note press s.")
+  welcome = input("To create a new note please press [c]. To Search for an existing note press [s]. To update a note press [u]. To delete an existing note press [d].")
+  if welcome == "c":
+    create()
+  # elif welcome == "s":
+  #   search()
 
 # Create
 def create():
-  if welcome == "c":
-    new_note = Notes.get(title = " ", date =(), body = " " )
+  # if welcome == "c":
+    new_note = Notes(title = "New note", date =date(2019, 1, 16), body = "this is my new notes" )
     new_note.save()
     print(f"Success! Your new note titled {new_note.title} was created!")
-  elif welcome():
+  # elif welcome():
+welcome()
+
 
 
 # Read 
-# if welcome == "s":
+# if welcome == "s"
