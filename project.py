@@ -21,6 +21,8 @@ def welcome():
     create()
   elif welcome == "s":
     search()
+  elif welcome == "u":
+    update()
 
 # Create
 def create():
@@ -46,5 +48,35 @@ def search():
     print(note.title)
     print(note.date)
     print(note.body)
+  more_options = input("Would you like to search for another note? [y/n]")
+  if more_options == "y":
+    search()
+  elif more_options == "n":
+    return
     
+# Update
+def update():
+  update = input("If you would like to update a title, please type 'update-title', if you would like to update the date of a note please type 'update-date'")
+  if update == "update-title":
+    search_title = input("Please enter the title of the note you are attempting to update: ")
+    edit_title = input("Please enter the new title of your note: ")
+    print(f'edit_title: {edit_title}')
+    update_title = Notes.get(Notes.title == search_title)
+    print(f'update_title: {update_title}')
+    update_title.title = edit_title
+    update_title.save()
+    print(f"Your title has been updated from {search_title} to {edit_title}")
+  elif update == "update-date":
+    search_date = input("Please enter the title of the note you are trying to update in order to edit the date: ")
+    edit_date = input("Please enter the new date of your note: ")
+    update_date = Notes.select(Notes.date == edit_date)
+    update_date = edit_date
+    update_date.save()
+    print(f"Your date has been updated from {search_date} to {update_date}")
+    more_updates = input("Would you like to update another note? [y/n] ")
+    if more_updates == "y":
+      update()
+    elif more_updates == "n":
+      return 
+
 welcome()
