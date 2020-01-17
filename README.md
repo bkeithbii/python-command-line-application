@@ -1,6 +1,5 @@
 # python-command-line-application
 
-
 ## Technologies Used
 * Python
 * Peewee
@@ -18,7 +17,7 @@ Peewee is a simple and small ORM tool. It automates the transfer of data between
 * The command line will then run you through a series of prompts in order to interact with the application.
 
 ## Goals
-In the future, I would like to improve upon this API by...
+In the future, I would like to improve upon this project by...
 * Implementing some more prompts in my code, making it easier for the user to interact with the application.
 * Print the note that the user is attempting to edit that it is visibly that they are editing the correct one.
 
