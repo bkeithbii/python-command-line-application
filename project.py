@@ -23,6 +23,8 @@ def welcome():
     search()
   elif welcome == "u":
     update()
+  elif welcome == "d":
+    delete()
 
 # Create
 def create():
@@ -90,8 +92,11 @@ def delete():
   delete_title = input("Please enter the title of the note you're attempting to delete: ")
   delete_note = Notes.get(Notes.title == delete_title)
   delete_note.delete_instance()
-  print(f"Your note titled {delete_title} has been deleted)
-
-
+  print(f"Your note titled {delete_title} has been deleted")
+  delete_options = input("Would you like to delete another note? [y/n]: ")
+  if delete_options == "y":
+    delete()
+  elif delete_options == "n":
+    return
 
 welcome()
