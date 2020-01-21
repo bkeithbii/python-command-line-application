@@ -36,11 +36,11 @@ def create():
   new_note = Notes(title = new_title, date = new_date, body= new_body)
   new_note.save()
   print(f"Success! Your new note titled {new_note.title} was created!")
-  success = input("Would you like to add another note? [y/n]: ")
+  success = input("Would you like to create another note? [y/n]: ")
   if success == "y":
     create()
   elif success == "n":
-    return
+    welcome()
 
 # Read
 def search():
@@ -54,7 +54,7 @@ def search():
   if more_options == "y":
     search()
   elif more_options == "n":
-    return
+    welcome()
   elif more_options != "y" or "n":
     print("I'm sorry that is not a valid option: ")
     
@@ -97,6 +97,6 @@ def delete():
   if delete_options == "y":
     delete()
   elif delete_options == "n":
-    return
+    welcome()
 
 welcome()

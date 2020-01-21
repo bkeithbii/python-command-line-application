@@ -13,7 +13,8 @@ Peewee is a simple and small ORM tool. It automates the transfer of data between
 
 ## Getting Started
 * Fork and clone the repository and open the code in your preferred text editor.
-* Open a tab in your terminal and execute the command pipenv run python project.py
+* Open a tab in your terminal and execute the command
+##### `pipenv run python project.py`
 * The command line will then run you through a series of prompts in order to interact with the application.
 
 ## Goals
